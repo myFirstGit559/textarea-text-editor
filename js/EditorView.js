@@ -3,7 +3,7 @@ function FormattedTextV() {
     var buttonCover = null;
     var textArea = null;
 
-    var fldName = null;//свойство поля с которого что-то спрашиваем у Юзера
+    var fldName = null;
     var newStr = null;
 
     var spinner = null;
@@ -49,31 +49,13 @@ function FormattedTextV() {
     ]}
     ]
 };
-
-    /*var selectTBtns = [
-        { Blocks:0},
-        { Paragraph:'<p>'},
-        { Heading1:'<h1>'},
-        { Heading2:'<h2>'},
-        { Heading3:'<h3>'},
-        { Heading4:'<h4>'},
-        { Heading5:'<h5>'},
-        { Heading6:'<h6>'},
-        { ListElement:'<li>'},
-        { HorisontalLine:'<hr>'},
-        { Quote:'<q>'},
-        { Span:'<span>'},
-    ];*/
-
-
-    var buttonsSmplProperty = new Array();//массив с обёртками, которые даёт кнопка
+    var buttonsSmplProperty = new Array();
     var cmplxProp = new Array();
 
     this.start = function (Model,Cover,Text) {
         textM = Model;
         buttonCover = Cover;
         textArea = Text;
-        //addSelectTags();
         createMenu();
         buttonCover.append("<span class='text-size'>Text size:<input id='spinner' name='value' value= 10 readonly> px</span>");
         setSpinner();
@@ -94,7 +76,7 @@ function FormattedTextV() {
                     btnEl.addClass(item['button'][1]);
                     btnEl.append(icon);
                     
-                    if(item['button'][2] != undefined){
+                    if(typeof item['button'][2] != 'undefined'){
                         btnEl.attr('data-quality',item['button'][2]);
                         btnEl.attr('data-id',(index));
                     } else {
@@ -105,18 +87,6 @@ function FormattedTextV() {
                 }
             });        
     }
-    /*var addSelectTags = function(selList){
-        var select = $("<select class = 'tags' id='tags'>");
-        $.each(selectTBtns,function(index, item) {
-            for(keys in item){
-                var option = $('<option>');
-                option.text(keys);
-                option.val(item[keys]);
-                select.append(option);
-            }
-        });
-        buttonCover.append(select);
-    }*/
     var createMenu = function(){
         var menu;
         $.each(menuBtns,function(key,value){

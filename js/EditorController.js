@@ -3,8 +3,8 @@ function FormattedTextC() {
     var buttonCover = null;
     var textArea = null;
 
-    var selStr = null;//выбрали строку
-    var startIndex = null;//определили положение начала выделения
+    var selStr = null;
+    var startIndex = null;
 
     this.start = function (Model, Cover, Text) {
         textM = Model;
@@ -15,19 +15,19 @@ function FormattedTextC() {
 
         btnsSmplEvent();
         btnsCmplxEvent();
-        //selectEvent();
+
         menuEvent();
         changeSize();
     }
     var getTextStr = function () {
        var selObj = window.getSelection && window.getSelection();
        var selRange;
-        if (window.getSelection()!=undefined && selObj.rangeCount!=0){ // Не IE, используем метод 
+        if (typeof window.getSelection()!='undefined' && selObj.rangeCount!=0){
              selRange = selObj.getRangeAt(0);
              selStr = selObj.toString();
-        } else if( document.selection != undefined){ // IE, используем объект selection
+        } else if( typeof document.selection != 'undefined'){ 
              selStr = document.selection.createRange().text;
-        } else if(window.getSelection() != undefined && selObj.rangeCount==0){
+        } else if(typeof window.getSelection() != 'undefined' && selObj.rangeCount==0){
              selRange = selObj.getRangeAt(0);
              selStr = selObj.toString();
 }
@@ -89,7 +89,7 @@ function FormattedTextC() {
         textM.showSpinner().on( "spinstop", function( event, ui ) {newChangeSize($(this).val());} );
     }
     var newChangeSize = function(size){
-        if(startIndex != undefined){
+        if(typeof startIndex != 'undefined'){
             textM.UpdateSize(startIndex,endIndex,size); 
             selStr = null;
         }

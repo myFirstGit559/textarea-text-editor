@@ -10,9 +10,7 @@ function FormattedTextM() {
            textV.Update(start,end,index,tags);
     }
 
-
-    //сформировали строку обёрнутую в тег span 
-    this.getSmplFrmtText = function(index){//получает выделенную строку и индекс кнопки
+    this.getSmplFrmtText = function(index){
          return textV.getSmplButtonsProperty()[index];     
     }
 
