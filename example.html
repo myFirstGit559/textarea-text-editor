@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Text Editor</title>
+
+    <script type="text/javascript" src="jquery/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript" src="jquery/jquery-ui.min.js"></script>
+       
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/clrp-styles.css">
+
+    <script type="text/javascript" src="js/EditorModel.js"></script>
+    <script type="text/javascript" src="js/EditorView.js"></script>
+    <script type="text/javascript" src="js/EditorController.js"></script>
+    <script type="text/javascript" src="js/ColorPicker.js"></script>
+
+    <script type="text/javascript">
+        $(function(){initEditor($('#formattedText'), $('#anyText'));});
+    </script>
+
+</head>
+<body>
+    <section id="formattedText" class="formattedText"></section>
+    <textarea id="anyText" class="anyText" contenteditable="true">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vulputate, eros at bibendum euismod, sapien libero malesuada eros, nec sagittis lacus justo non dui. In nec consectetur tellus, quis hendrerit tellus. Curabitur magna risus, porta eget orci eget, dignissim molestie lectus. Nam eget mi justo. Aenean lectus quam, mattis at tincidunt sed, faucibus a augue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed risus ipsum, bibendum a iaculis et, ullamcorper nec nunc. Nulla eget ultrices ex, non pulvinar enim. Phasellus ullamcorper diam nunc. Aenean vestibulum aliquam ex sed convallis. Pellentesque fermentum placerat enim eu tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Nam non erat tincidunt, placerat nisl commodo, molestie erat. Integer consectetur felis ac odio venenatis porttitor. Cras ut fringilla quam. Donec et arcu pellentesque orci pretium porttitor a eu nisi. In mollis pharetra elit. Donec ultricies neque quis ornare tincidunt. Aliquam eu arcu massa. Nunc pulvinar suscipit augue, vitae tempus magna scelerisque a. Phasellus dignissim quam sollicitudin ipsum rutrum, ac pretium diam egestas.
+In id porta dui, et cursus ipsum. In at imperdiet nulla. Vestibulum a neque non lacus consectetur volutpat. Aliquam sed augue turpis. Praesent vitae elit sapien. Nunc gravida mi in orci ultrices luctus. Praesent non rutrum ante.
+Proin pellentesque dui mauris, nec scelerisque nisi facilisis et. Fusce sit amet blandit ante. Suspendisse potenti. Curabitur id mattis ante, nec cursus sem. In sed malesuada turpis. Nulla facilisi. Aliquam eget sem tellus. Nam purus risus, semper sit amet luctus a, viverra at nisl. Sed eget diam eleifend, volutpat libero in, commodo magna. Nullam id fringilla elit. Pellentesque enim est, vehicula eget tristique et, pulvinar rutrum mauris. Aenean et lacinia sem. In consectetur rhoncus gravida.
+Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce imperdiet mi sit amet ex imperdiet eleifend. Cras sagittis metus sit amet augue pretium, et posuere tortor eleifend. Phasellus pulvinar ipsum ut orci tincidunt, a tincidunt augue sollicitudin. Nullam velit turpis, finibus id ultricies nec, vehicula eget ligula. Aliquam ac nisi in leo rutrum vestibulum. Vestibulum suscipit facilisis nibh rutrum pharetra. Nam eget purus quis turpis accumsan ornare id ut arcu. Phasellus aliquet erat sed metus ullamcorper, in bibendum neque tristique. Phasellus justo lectus, lobortis et facilisis ac, vulputate id erat. Proin sollicitudin ornare massa non dignissim. Cras sit amet lobortis nisl, et pretium diam.
+    </textarea>
+</body>
+</html>
