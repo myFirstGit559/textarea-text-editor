@@ -63,7 +63,7 @@ function FormattedTextV() {
         addButtons(simpleButtons);
         addSmplActions();
 
-        initColorPicker(buttonCover[0],'background-color','bg color');
+        initColorPicker(buttonCover[0],'background-color','background color');
         initColorPicker(buttonCover[0],'color','text color');
     }
     this.Update = function (start,end,index,tags) {
