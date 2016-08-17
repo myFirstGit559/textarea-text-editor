@@ -56,6 +56,7 @@ function FormattedTextV() {
         textM = Model;
         buttonCover = Cover;
         textArea = Text;
+        createUserTutorial('user-tutorial','User:','Select string in textarea and click any button to add styles!');
         createMenu();
         buttonCover.append("<span class='text-size'>Text size:<input id='spinner' name='value' value= 10 readonly> px</span>");
         setSpinner();
@@ -63,8 +64,9 @@ function FormattedTextV() {
         addButtons(simpleButtons);
         addSmplActions();
 
-        initColorPicker(buttonCover[0],'background-color','background color');
-        initColorPicker(buttonCover[0],'color','text color');
+        initColorPicker(buttonCover[0],'background-color');
+        initColorPicker(buttonCover[0],'color');
+
     }
     this.Update = function (start,end,index,tags) {
         var newCont;
@@ -311,8 +313,30 @@ function FormattedTextV() {
             autoOpen: true
         });
     }
-    this.UpdateColor = function(start,end,id,clr){
-        var clrpStProperty = $('#'+ id).attr('data-property');
+    var createUserTutorial = function(id,title,tutorialText){
+    	var popupDiv = $('<div>').attr('id',id);
+    	var tutorialP = $('<p>'+tutorialText +'</p>');
+    	popupDiv.append(tutorialP);
+    	buttonCover.append(popupDiv);
+        $('#'+ id).dialog({
+            buttons: {
+                 Cancel: function() {
+                 $(this).dialog( "close" );
+                }
+            },          
+            close: function() {
+                    popupDiv.remove();
+                },
+            draggable:true,
+            width:290,
+            resizable: false,
+            modal:true,
+            title:title,
+            autoOpen: true
+        });
+    }
+    this.UpdateColor = function(start,end,element,clr){
+        var clrpStProperty = $(element).attr('data-property');
         var str_html = textArea.val().slice(start,end);
         var new_str;
         var reg = /[<>\/]/g;
