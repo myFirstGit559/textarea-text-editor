@@ -101,19 +101,21 @@ function FormattedTextC() {
         }
     }
     var colorPicker = function(){
-        $('.clrp-cover').mouseenter(function(){
+        var cover = $('.clrp-cover');
+        cover.mouseenter(function(event){
             if(startIndex != null && endIndex != null)
-                selectColor($(this)[0].id);
+                selectColor(event.currentTarget);
         });
     }
-    var selectColor = function(id){
-        var colors = $("#palette-" + id).find('.item');
-            colors.click(function(event) {
+    var selectColor = function(element){
+        var palette = $(element).find('.palette');
+            palette.click(function(event) {
+                var item = $(event.target);
                 if(startIndex != null && endIndex != null)
-                    textM.UpdateColor(startIndex,endIndex,id,$(this).attr('data-color'));
+                    textM.UpdateColor(startIndex,endIndex,element,item.attr('data-color'));
                 startIndex = null;
                 endIndex = null;
-            });   
+            });  
 
     }
 }
